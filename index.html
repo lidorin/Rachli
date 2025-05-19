@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>רחלי מזוז - יועצת הנקה מוסמכת | באר שבע</title>
+    <style>
+        :root {
+            --primary-color: #8e44ad;
+            --secondary-color: #d6b7e5;
+            --accent-color: #f0e6f6;
+            --text-color: #333;
+            --light-text: #666;
+            --white: #ffffff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f9f9f9;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        
+        .tagline {
+            color: var(--light-text);
+            font-style: italic;
+            margin-top: -5px;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 2rem;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+        
+        .hero {
+            background: linear-gradient(to left, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            padding: 5rem 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem auto;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--white);
+            color: var(--primary-color);
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        }
+        
+        section {
+            padding: 5rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--primary-color);
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+        }
+        
+        .about-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        
+        .services-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .service-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .service-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .service-card h3 {
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        
+        .testimonials {
+            background-color: var(--accent-color);
+        }
+        
+        .testimonial-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .testimonial {
+            background-color: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 2rem;
+        }
+        
+        .testimonial p {
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+        
+        .testimonial-author {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        
+        .contact {
+            background-color: var(--white);
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+        
+        .contact-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .contact-info p {
+            margin-bottom: 0.5rem;
+        }
+        
+        .contact-form form {
+            display: grid;
+            gap: 1rem;
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .form-group label {
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        footer {
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        .social-links {
+            margin: 1rem 0;
+        }
+        
+        .social-links a {
+            color: var(--white);
+            margin: 0 10px;
+            font-size: 1.5rem;
+            transition: opacity 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            opacity: 0.8;
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 1rem;
+            }
+            
+            nav ul li {
+                margin: 0 1rem;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div>
+                    <div class="logo">רחלי מזוז</div>
+                    <div class="tagline">יועצת הנקה מוסמכת ואחות במחלקת אם וילוד</div>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#about">אודות</a></li>
+                        <li><a href="#services">שירותים</a></li>
+                        <li><a href="#testimonials">המלצות</a></li>
+                        <li><a href="#contact">צור קשר</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>ליווי והדרכת הנקה מקצועית</h1>
+            <p>אני רחלי מזוז, יועצת הנקה מוסמכת ואחות במחלקת אם וילוד בבית החולים סורוקה. אני כאן לתת לך את הכלים והתמיכה הדרושים להצלחת ההנקה שלך.</p>
+            <a href="#contact" class="btn">קבעי פגישת ייעוץ</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">מי אני</h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="/api/placeholder/400/400" alt="רחלי מזוז, יועצת הנקה">
+                </div>
+                <div class="about-text">
+                    <h3>רחלי מזוז</h3>
+                    <p>שלום, אני רחלי מזוז, יועצת הנקה מוסמכת עם ניסיון רב בליווי אימהות בדרכן להנקה מוצלחת.</p>
+                    <p>כאחות מוסמכת במחלקת אם וילוד בבית החולים סורוקה בבאר שבע, אני פוגשת מדי יום אימהות ותינוקות בתחילת דרכם המשותפת.</p>
+                    <p>ההכשרה המקצועית שלי, יחד עם הניסיון הקליני העשיר, מאפשרים לי להעניק ייעוץ מקצועי ואישי המותאם לצרכים הייחודיים של כל אם ותינוק.</p>
+                    <p>אני מאמינה כי הנקה היא מתנה מיוחדת, אך היא גם מיומנות נרכשת שלעתים דורשת הדרכה וליווי. המטרה שלי היא לתת לך את הכלים והביטחון להנקה מוצלחת ומספקת.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="container">
+            <h2 class="section-title">השירותים שלי</h2>
+            <div class="services-cards">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>ייעוץ הנקה בבית</h3>
+                    <p>ביקור בית מקיף הכולל הערכת הנקה מלאה, פתרון בעיות, והדרכה מעשית בסביבה הנוחה והמוכרת לך ולתינוקך.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3>ייעוץ הנקה מקוון</h3>
+                    <p>ייעוץ נוח ונגיש דרך שיחת וידאו, מתאים במיוחד לשאלות ממוקדות או למעקב לאחר פגישה פרונטלית.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>סדנאות הכנה להנקה</h3>
+                    <p>סדנאות קבוצתיות להכנה לקראת הנקה, מיועדות לנשים בהריון המעוניינות להתכונן מראש ולרכוש ידע וכלים חיוניים.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <h3>תמיכה טלפונית</h3>
+                    <p>מענה לשאלות דחופות ותמיכה שוטפת בטלפון לאימהות שכבר נפגשו איתי בייעוץ פרונטלי.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2 class="section-title">מה אומרות עלי</h2>
+            <div class="testimonial-container">
+                <div class="testimonial">
+                    <p>"רחלי הייתה המלאך השומר שלי בימים הראשונים אחרי הלידה. בזכות הסבלנות והידע המקצועי שלה, הצלחתי להתגבר על קשיי ההנקה הראשוניים ולהגיע להנקה מוצלחת ומספקת."</p>
+                    <div class="testimonial-author">מיכל, אמא לתינוקת בת חודשיים</div>
+                </div>
+                <div class="testimonial">
+                    <p>"אחרי שהבן הראשון שלי לא ינק בכלל, הייתי נחושה להצליח עם בני השני. רחלי ליוותה אותי בתהליך מהרגע הראשון, והידע והתמיכה שלה עשו את כל ההבדל. היום אנחנו כבר 6 חודשים בהנקה בלעדית!"</p>
+                    <div class="testimonial-author">שירה, אמא לשני בנים</div>
+                </div>
+                <div class="testimonial">
+                    <p>"רחלי חיזקה אותי מאוד ברגעים הכי קשים. היא הייתה זמינה עבורי גם בשעות לא שגרתיות ונתנה לי את הביטחון שחיפשתי. ממליצה בחום לכל אמא חדשה להיעזר בשירותיה המקצועיים והאישיים."</p>
+                    <div class="testimonial-author">רותם, אמא לתאומים</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">צרי קשר</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>פרטי התקשרות</h3>
+                    <p><i class="fas fa-phone"></i> טלפון: 050-1234567</p>
+                    <p><i class="fas fa-envelope"></i> אימייל: racheli.mazuz@example.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> אזור פעילות: באר שבע והסביבה</p>
+                    <p><i class="fas fa-hospital"></i> בית חולים סורוקה, מחלקת אם וילוד</p>
+                    
+                    <h3 style="margin-top: 2rem;">שעות פעילות</h3>
+                    <p>ימים א'-ה': 9:00-20:00</p>
+                    <p>יום ו': 9:00-13:00</p>
+                    <p>שבת: סגור (במקרים דחופים ניתן לפנות בהודעה)</p>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">שם מלא</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">טלפון</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">אימייל</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">הודעה</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn" style="border: none; cursor: pointer; width: 100%;">שליחה</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 רחלי מזוז - יועצת הנקה מוסמכת. כל הזכויות שמורות.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // סקריפט פשוט לגלילה חלקה למדורים
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // סקריפט לטופס צור קשר (לדוגמה בלבד)
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('תודה על פנייתך! נחזור אליך בהקדם.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
